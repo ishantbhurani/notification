@@ -1,0 +1,161 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-bg: #ebebf3;
+  --color-notification-bg: #748cdb;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-bg);
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+}
+
+main {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5em;
+}
+
+a {
+  color: inherit;
+}
+
+.notification {
+  width: 100%;
+  min-width: 25em;
+  position: relative;
+  background-color: var(--color-notification-bg);
+  padding: 2em;
+  box-shadow: 0 1em 1em -1em #777;
+  border-radius: 5em;
+  color: var(--color-white);
+  font-size: 0.875em;
+}
+
+.close-notification {
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.2);
+  border: transparent;
+  outline: transparent;
+  border-radius: 50%;
+  padding: 0.4em 0.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.notification a {
+  font-weight: bold;
+}
+
+.card {
+  width: 350px;
+  position: relative;
+  background-color: var(--color-white);
+  border-radius: 1em;
+  text-align: center;
+  padding: 2em;
+  font-size: 0.875em;
+}
+
+.close-card {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: var(--color-black);
+  background: none;
+  outline: transparent;
+  font-size: 1.25em;
+  padding: 0.5em 0.6em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-notification:hover,
+.close-notification:focus,
+.close-card:hover,
+.close-card:focus {
+  font-weight: bold;
+}
+
+.image {
+  display: inline-block;
+  background-color: rgba(217, 136, 90, 0.4);
+  padding: 1em;
+  border-radius: 50%;
+  margin-bottom: 1.5em;
+}
+
+.image img {
+  width: 50px;
+  height: 50px;
+}
+
+.card p {
+  padding: 0 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 1.5em;
+  gap: 0.5em;
+}
+
+.btn {
+  background: none;
+  border: 1px solid #748cdb;
+  outline: transparent;
+  padding: 1em 1.5em;
+  border-radius: 5em;
+  color: #405287;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #fff;
+  background-color: #748cdb;
+}
+
+@media screen and (max-width: 768px) {
+  .notification {
+    border-radius: 1em;
+  }
+
+  .close-notification {
+    top: 1.5em;
+  }
+
+  .notification a {
+    display: block;
+  }
+}
